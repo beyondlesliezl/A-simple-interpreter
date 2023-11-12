@@ -120,6 +120,9 @@ class Parser(object):
 
         expr   : factor ((MUL | DIV) factor)*
         factor : INTEGER
+
+        The optional grouping (…)* becomes a while loop 
+        and (MUL | DIV) alternatives become an if-elif-else statement. 
         """
         self.factor()
 
