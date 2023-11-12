@@ -18,7 +18,7 @@ class Token {
         Token(TokenType type, string value) : type(type), value(value) {};
 
         string to_str() const {
-            return "Token(" + to_string(this->type) + "," + "value" + "+" + ")";
+            return "Token(" + to_string(this->type) + ", " + value + ")";
         }
 };
 
