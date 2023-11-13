@@ -74,3 +74,13 @@ An abstract syntax tree (AST) is a tree that represents the abstract syntactic s
 To represent that “X happens before Y” you just need to put X lower in the tree than Y.
 
 距离根节点越远，优先级越低
+
+### How do you navigate the tree to properly evaluate the expression represented by that tree
+
+ You do that by using a *postorder traversal* - a special case of depth-first traversal - which starts at the root node and recursively visits the children of each node from left to right. The postorder traversal visits nodes as far away from the root as fast as it can.
+
+ The reason we’re going to use a postorder traversal for our interpreter is that first, we need to evaluate interior nodes lower in the tree because they represent operators with higher precedence and second, we need to evaluate operands of an operator before applying the operator to those operands. 
+
+### recursive-descent parser
+
+a recursive-descent parser is a top-down parser that uses a set of recursive procedures to process the input. Top-down reflects the fact that the parser begins by constructing the top node of the parse tree and then gradually constructs lower nodes.
