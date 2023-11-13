@@ -84,3 +84,8 @@ To represent that “X happens before Y” you just need to put X lower in the t
 ### recursive-descent parser
 
 a recursive-descent parser is a top-down parser that uses a set of recursive procedures to process the input. Top-down reflects the fact that the parser begins by constructing the top node of the parse tree and then gradually constructs lower nodes.
+
+### visualize ASTs
+
+``python3 genastdot.py "7 + 3 * (10 / (12 / (3 + 1) - 1))" > \
+  ast.dot && dot -Tpng -o ast.png ast.dot``
