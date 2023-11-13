@@ -89,3 +89,16 @@ a recursive-descent parser is a top-down parser that uses a set of recursive pro
 
 ``python3 genastdot.py "7 + 3 * (10 / (12 / (3 + 1) - 1))" > \
   ast.dot && dot -Tpng -o ast.png ast.dot``
+
+## part8
+
+### What is a unary operator
+
+A unary operator is an operator that operates on one operand only.
+
+Here are the rules for unary plus and unary minus operators:
+
+* The unary minus (-) operator produces the negation of its numeric operand
+* The unary plus (+) operator yields its numeric operand without change
+
+* The unary operators have higher precedence than the binary operators +, -, *, and /
