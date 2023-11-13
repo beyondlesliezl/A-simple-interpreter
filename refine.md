@@ -38,3 +38,39 @@ The term production will have a body representing the use of operators from leve
 And the production for the non-terminal factor will be:
 
 ``factor : INTEGER``
+
+## part6
+
+### repetition is the mother of all learning.
+
+## part7
+
+### parse tree
+
+* The parse tree records a sequence of rules the parser applies to recognize the input.
+
+* The root of the parse tree is labeled with the grammar start symbol.
+
+* Each interior node represents a non-terminal, that is it represents a grammar rule application, like expr, term, or factor in our case.
+
+* Each leaf node represents a token.
+
+### the main differences between ASTs and Parse trees
+
+* ASTs uses operators/operations as root and interior nodes and it uses operands as their children.
+
+*ASTs do not use interior nodes to represent a grammar rule, unlike the parse tree does.
+
+* ASTs don’t represent every detail from the real syntax (that’s why they’re called abstract) - no rule nodes and no parentheses, for example.
+
+* ASTs are dense compared to a parse tree for the same language construct.
+
+### abstract syntax tree
+
+An abstract syntax tree (AST) is a tree that represents the abstract syntactic structure of a language construct where *each interior node and the root node represents an operator*, and the children of the node represent the operands of that operator.
+
+### how do you encode operator precedence in an AST
+
+To represent that “X happens before Y” you just need to put X lower in the tree than Y.
+
+距离根节点越远，优先级越低
