@@ -102,3 +102,27 @@ Here are the rules for unary plus and unary minus operators:
 * The unary plus (+) operator yields its numeric operand without change
 
 * The unary operators have higher precedence than the binary operators +, -, *, and /
+
+## part13
+
+### What information about variables do we need to collect?
+
+1. Name (we need to know the name of a declared variable because later we will be looking up variables by their names)
+
+2. Category (we need to know what kind of an identifier it is: variable, type, procedure, and so on)
+
+3. Type (we’ll need this information for type checking)
+
+Symbols will hold that information (name, category, and type) about our variables. What’s a symbol? A symbol is an identifier of some program entity like a variable, subroutine, or built-in type.
+
+What about the category? We will encode category into the class name.
+
+### Where and how should we store the collected information?
+
+The answer is, as you probably already know, in the symbol table.
+
+What is a symbol table? A symbol table is an abstract data type for tracking various symbols in source code. Think of it as a dictionary where the key is the symbol’s name and the value is an instance of the symbol class (or one of its subclasses). 
+
+### How do we implement the “go over all variable declarations” step?
+
+We will create a new AST visitor that will do some actions on visiting VarDecl AST nodes.
